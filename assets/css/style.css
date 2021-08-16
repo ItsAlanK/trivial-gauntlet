@@ -14,6 +14,11 @@
     align-items: center;
 }
 
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
 .grid {
     display: grid;
     width: 100%;
