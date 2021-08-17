@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { // check for content to be loaded
     let difficultyBtns = document.getElementsByClassName("difficulty-btn");
 
-    for (let button of difficultyBtns) {
-        button.addEventListener("click", function (e) {
-            if (e.target.id == "easy-btn") {
+    for (let button of difficultyBtns) { // adds listeners to difficulty selection buttons
+        button.addEventListener("click", function (e) { 
+            if (e.target.id == "easy-btn") { // calls getQuestions function
                 getQuestions("easy");
             } else if (e.target.id == "medium-btn") {
                 getQuestions("medium");
@@ -27,8 +27,9 @@ async function getQuestions(difficultyChoice) {
 }
 
 /** 
- * Resets score and progress values and calls functions to start a new game
+ * Resets score & progress values and calls functions to start a new game.
+ * Hides title screen and shows game screen.
  */
 function startGame() {
-    
+
 }
