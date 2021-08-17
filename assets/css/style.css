@@ -90,3 +90,11 @@ p {
 #difficulty-menu {
     width: 20rem;
 }
+
+/* Game Screen */
+#answers{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
