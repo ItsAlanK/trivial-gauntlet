@@ -45,6 +45,8 @@ function extractData(questionList) {
         console.log(question);
         let answers = item.incorrect_answers;
         console.log(answers);
+        let correctAnswer = item.correct_answer;
+        console.log(correctAnswer);
     })
 }
 
