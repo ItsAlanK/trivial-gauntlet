@@ -39,10 +39,13 @@ async function getQuestions(difficultyChoice, sessionToken) {
 }
 
 function extractData(questionList) {
-    let questions = [];
-    for (i = 0; i < questionList.length; i++) {
-        console.log(questionList[i].question);
-    }
+    // let questionData = {};
+    // for (i = 0; i < questionList.length; i++) {
+    //     questionData["question"] = questionList[i].question;
+    //     questionData["answers"] = [questionList[i].incorrect_answers];
+    //     questionData["correctAnswer"] = questionList[i].correct_answer;
+    //     console.log(questionData);
+    // }
 }
 
 /** 
