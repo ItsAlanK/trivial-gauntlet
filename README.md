@@ -19,16 +19,16 @@ On the game page the player is provided with only the information needed to comp
 ### Wireframes ###
 The following are the wireframes used to plan the layout for the games main pages. The mobile and desktop versions will remain largely the same with some elements stacking vertically rather than horizontally on smaller devices. This will be achieved using css flexbox and css grids.
 - Mobile Title Page
-![Mobile Title Page Wireframe](support-docs/wireframes/mobile-titlescreen-wireframe.png)
+![Mobile Title Page Wireframe](docs/wireframes/mobile-titlescreen-wireframe.png)
 
 - Mobile Game Page
-![Mobile Game Page Wireframe](support-docs/wireframes/mobile-gamescreen-wireframe.png)
+![Mobile Game Page Wireframe](docs/wireframes/mobile-gamescreen-wireframe.png)
 
 - Desktop Title Page
-![Desktop Title Page Wireframe](support-docs/wireframes/desktop-titlescreen-wireframe.png)
+![Desktop Title Page Wireframe](docs/wireframes/desktop-titlescreen-wireframe.png)
 
 - Desktop Game Page
-![Desktop Game Page Wireframe](support-docs/wireframes/desktop-gamescreen-wireframe.png)
+![Desktop Game Page Wireframe](docs/wireframes/desktop-gamescreen-wireframe.png)
 
 ### Fonts ###
 All fonts used were found on [Google Fonts](https://fonts.google.com/).
