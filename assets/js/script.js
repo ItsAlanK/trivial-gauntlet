@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 /**
  * Gets a session token on page load to ensure questions are not duplicated
+ * @returns {string} sessionToken
  */
 async function getToken() {
     let response = await fetch("https://opentdb.com/api_token.php?command=request");
@@ -36,7 +37,8 @@ async function getToken() {
 
 /**
  * Uses Open Trivia Database API to create Array of questions based on difficulty option selected
- * 
+ * @param {string} difficultyChoice
+ * @param {string} sessionToken
  */
 async function getQuestions(difficultyChoice, sessionToken) {
     let response = await fetch(`https://opentdb.com/api.php?amount=50&difficulty=${difficultyChoice}&type=multiple&token=${sessionToken}`);
@@ -46,6 +48,10 @@ async function getQuestions(difficultyChoice, sessionToken) {
 
 }
 
+/**
+ * Extracts question and answers from data returned from database
+ * @param {array} questionList 
+ */
 function extractData(questionList) {
     console.log(questionList);
     questionList.map((item) => {
