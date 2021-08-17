@@ -36,6 +36,7 @@ async function getToken() {
 
 /**
  * Uses Open Trivia Database API to create Array of questions based on difficulty option selected
+ * 
  */
 async function getQuestions(difficultyChoice, sessionToken) {
     let response = await fetch(`https://opentdb.com/api.php?amount=50&difficulty=${difficultyChoice}&type=multiple&token=${sessionToken}`);
@@ -49,11 +50,10 @@ function extractData(questionList) {
     console.log(questionList);
     questionList.map((item) => {
         let question = item.question;
-        console.log(question);
         let answers = item.incorrect_answers;
-        console.log(answers);
         let correctAnswer = item.correct_answer;
-        console.log(correctAnswer);
+        answers.push(correctAnswer);
+        shuffle(answers);
     })
 }
 
@@ -72,4 +72,20 @@ function startGame(difficulty, token) {
 function hideScreen() {
     titleScreenRef.className += " hidden";
     gameWindowRef.classList.remove("hidden");
+}
+
+//Fisher-Yates algorithm
+function shuffle(array) {
+    var currentIndex = array.length,
+        randomIndex;
+
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]
+        ];
+    }
+
+    return array;
 }
