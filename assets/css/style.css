@@ -29,6 +29,10 @@
     width: 100%;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Headings and Paragraphs */
 
 h1,
