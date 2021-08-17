@@ -31,7 +31,11 @@ The following are the wireframes used to plan the layout for the games main page
 ![Desktop Game Page Wireframe](support-docs/wireframes/desktop-gamescreen-wireframe.png)
 
 ### Fonts ###
+All fonts used were found on [Google Fonts](https://fonts.google.com/).
 
+The main hero font used for titles is [Bungee Shade](https://fonts.google.com/specimen/Bungee+Shade). This font is both clear and readable while also being decorative and fitting with the overall aesthetic of the game.
+
+The font chosen for the body elements is [Montserrat](https://fonts.google.com/specimen/Montserrat). This sans-serif font is easy to read, clean yet distinct from default sans-serif fonts. Using a combination of light, medium and bold styles this font meets all needs for the bulk of the games' text.
 ### Colors ###
 
 ## Features ##
