@@ -31,21 +31,32 @@ async function getToken() {
  * Uses Open Trivia Database API to create Array of questions based on difficulty option selected
  */
 async function getQuestions(difficultyChoice, sessionToken) {
-    let response = await fetch(`https://opentdb.com/api.php?amount=50&difficulty=${difficultyChoice}&token=${sessionToken}`);
+    let response = await fetch(`https://opentdb.com/api.php?amount=50&difficulty=${difficultyChoice}&type=multiple&token=${sessionToken}`);
     let rawData = await response.json();
     rawData = rawData.results;
-    console.log(rawData);
+    extractData(rawData);
+
+}
+
+function extractData(questionList) {
+    let questions = [];
+    for (i = 0; i < questionList.length; i++) {
+        console.log(questionList[i].question);
+    }
 }
 
 /** 
  * Resets score & progress values and calls functions to start a new game.
- * Hides title screen and shows game screen.
  */
 function startGame(difficulty, token) {
     getQuestions(difficulty, token);
     hideScreen();
+
 }
 
+/**
+ * Hides title screen and reveals game screen.
+ */
 function hideScreen() {
     document.getElementById("title-screen").className += " hidden";
     document.getElementById("game-window").classList.remove("hidden");
