@@ -39,13 +39,13 @@ async function getQuestions(difficultyChoice, sessionToken) {
 }
 
 function extractData(questionList) {
-    // let questionData = {};
-    // for (i = 0; i < questionList.length; i++) {
-    //     questionData["question"] = questionList[i].question;
-    //     questionData["answers"] = [questionList[i].incorrect_answers];
-    //     questionData["correctAnswer"] = questionList[i].correct_answer;
-    //     console.log(questionData);
-    // }
+    console.log(questionList);
+    questionList.map((item) => {
+        let question = item.question;
+        console.log(question);
+        let answers = item.incorrect_answers;
+        console.log(answers);
+    })
 }
 
 /** 
