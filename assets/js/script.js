@@ -4,15 +4,18 @@ document.addEventListener("DOMContentLoaded", async function () { // check for c
 
     for (let button of difficultyBtns) { // adds listeners to difficulty selection buttons
         button.addEventListener("click", function (e) {
-            if (e.target.id == "easy-btn") { // calls startGame function, passes difficulty and session token
-                startGame("easy", sessionToken);
-            } else if (e.target.id == "medium-btn") {
-                startGame("medium", sessionToken);
-            } else if (e.target.id == "hard-btn") {
-                startGame("hard", sessionToken);
-            } else {
-                alert("Difficulty Undefined: Refreshing Page");
-                location.reload();
+            switch (e.target.id) {
+                case "easy-btn":
+                    startGame("easy", sessionToken);
+                    break;
+                case "medium-btn":
+                    startGame("medium", sessionToken);
+                    break;
+                case "hard-btn":
+                    startGame("hard", sessionToken);
+                    break;
+                default:
+                    break;
             }
         })
     }
