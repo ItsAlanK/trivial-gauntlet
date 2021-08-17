@@ -39,7 +39,29 @@ The font chosen for the body elements is [Montserrat](https://fonts.google.com/s
 ### Colors ###
 
 ## Features ##
+### Existing Features ###
+- Three Difficulty Settings
 
+- Session Tokens
+
+- No Page Loads 
+
+- Multiple Choice quiz
+
+- Interaction Feedback
+
+- Score Counter
+
+- Progress Bar
+
+- Three Strike Life System
+
+- Database API Question Pool
+
+### Potential Future Features
+- Topic Selections
+
+- High Scores List
 
 ## Testing ##
 
