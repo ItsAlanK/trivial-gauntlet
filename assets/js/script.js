@@ -1,5 +1,9 @@
+const titleScreenRef = document.getElementById("title-screen");
+const gameWindowRef = document.getElementById("game-window");
+const diffBtnsRef = document.getElementsByClassName("difficulty-btn");
+
 document.addEventListener("DOMContentLoaded", async function () { // check for content to be loaded
-    let difficultyBtns = document.getElementsByClassName("difficulty-btn");
+    let difficultyBtns = diffBtnsRef;
     let sessionToken = await getToken(); // assigns session token on page load
 
     for (let button of difficultyBtns) { // adds listeners to difficulty selection buttons
@@ -66,6 +70,6 @@ function startGame(difficulty, token) {
  * Hides title screen and reveals game screen.
  */
 function hideScreen() {
-    document.getElementById("title-screen").className += " hidden";
-    document.getElementById("game-window").classList.remove("hidden");
+    titleScreenRef.className += " hidden";
+    gameWindowRef.classList.remove("hidden");
 }
