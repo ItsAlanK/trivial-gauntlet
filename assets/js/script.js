@@ -4,15 +4,12 @@ document.addEventListener("DOMContentLoaded", async function () { // check for c
 
     for (let button of difficultyBtns) { // adds listeners to difficulty selection buttons
         button.addEventListener("click", function (e) { 
-            if (e.target.id == "easy-btn") { // calls getQuestions function
-                getQuestions("easy", sessionToken);
-                startGame();
+            if (e.target.id == "easy-btn") { // calls startGame function, passes difficulty and session token
+                startGame("easy", sessionToken);
             } else if (e.target.id == "medium-btn") {
-                getQuestions("medium", sessionToken);
-                startGame();
+                startGame("medium", sessionToken);
             } else if (e.target.id == "hard-btn") {
-                getQuestions("hard", sessionToken);
-                startGame();
+                startGame("hard", sessionToken);
             } else {
                 alert("Difficulty Undefined: Refreshing Page");
                 location.reload();
@@ -36,6 +33,7 @@ async function getToken() {
 async function getQuestions(difficultyChoice, sessionToken) {
     let response = await fetch(`https://opentdb.com/api.php?amount=50&difficulty=${difficultyChoice}&token=${sessionToken}`);
     let rawData = await response.json();
+    rawData = rawData.results;
     console.log(rawData);
 }
 
@@ -43,7 +41,8 @@ async function getQuestions(difficultyChoice, sessionToken) {
  * Resets score & progress values and calls functions to start a new game.
  * Hides title screen and shows game screen.
  */
-function startGame() {
+function startGame(difficulty, token) {
     document.getElementById("title-screen").className += " hidden";
     document.getElementById("game-window").classList.remove("hidden");
+    getQuestions(difficulty, token);
 }
