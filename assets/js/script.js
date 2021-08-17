@@ -1,12 +1,12 @@
-const titleScreenRef = document.getElementById("title-screen");
-const gameWindowRef = document.getElementById("game-window");
+const titleScreenRef = document.querySelector("#title-screen");
+const gameWindowRef = document.querySelector("#game-window");
 const diffBtnsRef = document.getElementsByClassName("difficulty-btn");
 
-document.addEventListener("DOMContentLoaded", async function () { // check for content to be loaded
+document.addEventListener("DOMContentLoaded", async function () {
     let difficultyBtns = diffBtnsRef;
-    let sessionToken = await getToken(); // assigns session token on page load
+    let sessionToken = await getToken();
 
-    for (let button of difficultyBtns) { // adds listeners to difficulty selection buttons
+    for (let button of difficultyBtns) {
         button.addEventListener("click", function (e) {
             switch (e.target.id) {
                 case "easy-btn":
