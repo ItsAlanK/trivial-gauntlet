@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () { // check for content to be loaded
     let difficultyBtns = document.getElementsByClassName("difficulty-btn");
-
-    let sessionToken = await getToken();
+    let sessionToken = await getToken(); // assigns session token on page load
 
     for (let button of difficultyBtns) { // adds listeners to difficulty selection buttons
         button.addEventListener("click", function (e) { 
@@ -44,5 +43,6 @@ async function getQuestions(difficultyChoice, sessionToken) {
  * Hides title screen and shows game screen.
  */
 function startGame() {
-
+    document.getElementById("title-screen").className += " hidden";
+    document.getElementById("game-window").classList.remove("hidden");
 }
