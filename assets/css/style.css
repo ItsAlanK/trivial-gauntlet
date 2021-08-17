@@ -98,3 +98,9 @@ p {
     column-gap: 1rem;
     row-gap: 1rem;
 }
+
+.answers-text{
+    color: #FCF7FF;
+    background-color: #69C8AA;
+    margin: 0.5rem 0;
+}
