@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", async function () { // check for c
                 getQuestions("hard", sessionToken);
                 startGame();
             } else {
-                alert("Difficulty Undefined");
+                alert("Difficulty Undefined: Refreshing Page");
+                location.reload();
             }
         })
     }
