@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async function () { // check for c
     let sessionToken = await getToken(); // assigns session token on page load
 
     for (let button of difficultyBtns) { // adds listeners to difficulty selection buttons
-        button.addEventListener("click", function (e) { 
+        button.addEventListener("click", function (e) {
             if (e.target.id == "easy-btn") { // calls startGame function, passes difficulty and session token
                 startGame("easy", sessionToken);
             } else if (e.target.id == "medium-btn") {
@@ -42,7 +42,11 @@ async function getQuestions(difficultyChoice, sessionToken) {
  * Hides title screen and shows game screen.
  */
 function startGame(difficulty, token) {
+    getQuestions(difficulty, token);
+    hideScreen();
+}
+
+function hideScreen() {
     document.getElementById("title-screen").className += " hidden";
     document.getElementById("game-window").classList.remove("hidden");
-    getQuestions(difficulty, token);
 }
