@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat:wght@300;500;700&display=swap');
+
 /* Global Style */
 
 * {
     margin: 0;
     padding: 0;
     border: none;
+    font-size: 10px;
 }
 
 .container {
@@ -14,7 +17,7 @@
     align-items: center;
 }
 
-.flex{
+.flex {
     display: flex;
     flex-direction: column;
 }
@@ -23,6 +26,8 @@
     display: grid;
     width: 100%;
 }
+
+/* Headings and Paragraphs */
 
 h1,
 h2,
@@ -34,4 +39,19 @@ p {
     text-align: center;
     text-transform: capitalize;
     margin-bottom: 1rem;
+}
+
+h1 {
+    font-family: 'Bungee Shade', 'Arial', sans-serif;
+    font-size: 5rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: 'Montserrat', 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
 }
