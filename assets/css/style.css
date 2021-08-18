@@ -137,6 +137,15 @@ a {
     grid-column: 1;
 }
 
+#finish-line {
+    color: red;
+    font-size: 3rem;
+    bottom: 3rem;
+    left: 2.5rem;
+    position: relative;
+    grid-column: 50;
+}
+
 #strikes * {
     font-size: 2rem;
     padding: 2rem 0.5rem;
