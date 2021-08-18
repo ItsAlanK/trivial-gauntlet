@@ -116,13 +116,13 @@ function checkAnswer() {
         button.addEventListener("click", function (e) {
             const chosenAns = e.target.innerHTML;
             if(chosenAns == answerCheck) {
-                alert("correct");
                 score += 1;
+                e.target.classList.add("correct");
                 loadQuestion();
             } else {
-                alert("wrong");
-                loadQuestion();
                 strikes += 1;
+                e.target.classList.add("incorrect");
+                loadQuestion();
             }
         })
     }
@@ -132,7 +132,7 @@ function checkAnswer() {
  * Hides title screen and reveals game screen.
  */
 function hideScreen() {
-    titleScreenRef.className += " hidden";
+    titleScreenRef.classList.add("hidden");
     gameWindowRef.classList.remove("hidden");
 }
 

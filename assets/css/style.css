@@ -110,3 +110,11 @@ a {
 #difficulty-menu {
     width: 20rem;
 }
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
