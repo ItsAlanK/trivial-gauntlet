@@ -36,6 +36,13 @@ All fonts used were found on [Google Fonts](https://fonts.google.com/).
 The main hero font used for titles is [Bungee Shade](https://fonts.google.com/specimen/Bungee+Shade). This font is both clear and readable while also being decorative and fitting with the overall aesthetic of the game.
 
 The font chosen for the body elements is [Montserrat](https://fonts.google.com/specimen/Montserrat). This sans-serif font is easy to read, clean yet distinct from default sans-serif fonts. Using a combination of light, medium and bold styles this font meets all needs for the bulk of the games' text.
+
+### Typography ###
+Typography icons used for progress bar and strike indicators are found on [Font Awesome](https://fontawesome.com/).
+
+- [Strike Icon](https://fontawesome.com/v5.15/icons/skull?style=solid)
+- [Progress Marker Icon](https://fontawesome.com/v5.15/icons/male?style=solid)
+- [Finish Line Icon](https://fontawesome.com/v5.15/icons/flag-checkered?style=solid)
 ### Colors ###
 
 ## Features ##
