@@ -77,8 +77,9 @@ function extractData(questionList) {
  * Resets score & progress values and calls functions to start a new game.
  */
 async function startGame(difficulty, token) {
-    getQuestions(difficulty, token);
+    await getQuestions(difficulty, token);
     hideScreen();
+    loadQuestion();
 }
 
 function loadQuestion() {
@@ -86,7 +87,6 @@ function loadQuestion() {
     questionIndex -= 1;
     let currentQuestion = questions[questionIndex];
     questionTextRef.innerHTML = `${currentQuestion.question}`;
-    console.log(questionTextRef.innerHTML);
 }
 
 /**
