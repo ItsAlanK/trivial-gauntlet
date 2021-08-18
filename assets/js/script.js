@@ -2,7 +2,7 @@ const titleScreenRef = document.querySelector("#title-screen");
 const gameWindowRef = document.querySelector("#game-window");
 const diffBtnsRef = document.getElementsByClassName("difficulty-btn");
 const questionTextRef = document.querySelector("#question");
-const answersChoicesRef = document.querySelector(".answers-text");
+const answersChoicesRef = document.getElementsByClassName("answers-text");
 
 console.log(answersChoicesRef);
 
@@ -72,7 +72,6 @@ function extractData(questionList) {
 function startGame(difficulty, token) {
     getQuestions(difficulty, token);
     hideScreen();
-
 }
 
 /**
