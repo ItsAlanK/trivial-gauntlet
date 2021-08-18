@@ -115,14 +115,20 @@ function checkAnswer() {
     for (let button of answersChoicesRef) {
         button.addEventListener("click", function (e) {
             const chosenAns = e.target.innerHTML;
-            if(chosenAns == answerCheck) {
+            if (chosenAns == answerCheck) {
                 score += 1;
                 e.target.classList.add("correct");
-                loadQuestion();
+                setTimeout(() => (
+                    e.target.classList.remove("correct"),
+                    loadQuestion()
+                ), 2000);
             } else {
                 strikes += 1;
                 e.target.classList.add("incorrect");
-                loadQuestion();
+                setTimeout(() => (
+                    e.target.classList.remove("incorrect"),
+                    loadQuestion()
+                ), 2000);
             }
         })
     }
