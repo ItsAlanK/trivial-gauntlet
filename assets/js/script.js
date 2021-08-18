@@ -133,19 +133,21 @@ function checkAnswer() {
                 score += 1;
                 strikesRef.innerHTML = strikes;
                 e.target.classList.add("correct");
+                gameWon();
                 setTimeout(() => (
                     e.target.classList.remove("correct"),
                     loadQuestion()
-                ), 2000);
+                ), 1000);
             } else {
                 strikes += '<i class="fas fa-skull"></i>';
                 strikeCounter++;
                 strikesRef.innerHTML = strikes;
                 e.target.classList.add("incorrect");
+                gameWon();
                 setTimeout(() => (
                     e.target.classList.remove("incorrect"),
                     loadQuestion()
-                ), 2000);
+                ), 1000);
             }
         })
     }
@@ -157,6 +159,16 @@ function checkAnswer() {
 function hideScreen() {
     titleScreenRef.classList.add("hidden");
     gameWindowRef.classList.remove("hidden");
+}
+
+/**
+ * Checks with each round if player has gotten to the end
+ * of the questions list
+ */
+function gameWon() {
+    if (questionIndex > questions.length) {
+        alert("winner");
+    }
 }
 
 function reset() {
