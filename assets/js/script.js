@@ -101,49 +101,20 @@ function loadQuestion() {
     questionIndex++;
 }
 
-
+/** 
+ * Adds event listeners to answer buttons and checks selected answer against
+ * answerCheck set by loadQuestion()
+ */
 function checkAnswer() {
     for (let button of answersChoicesRef) {
         button.addEventListener("click", function (e) {
-            switch (e.target.id) {
-                case "answer1":
-                    if (e.target.innerHTML == answerCheck) {
-                        alert("correct");
-                    } else {
-                        alert("wrong");
-                    }
-                    console.log(e.target.innerHTML);
-                    loadQuestion();
-                    break;
-                case "answer2":
-                    if (e.target.innerHTML == answerCheck) {
-                        alert("correct");
-                    } else {
-                        alert("wrong");
-                    }
-                    console.log(e.target.innerHTML);
-                    loadQuestion();
-                    break;
-                case "answer3":
-                    if (e.target.innerHTML == answerCheck) {
-                        alert("correct");
-                    } else {
-                        alert("wrong");
-                    }
-                    console.log(e.target.innerHTML);
-                    loadQuestion();
-                    break;
-                case "answer4":
-                    if (e.target.innerHTML == answerCheck) {
-                        alert("correct");
-                    } else {
-                        alert("wrong");
-                    }
-                    console.log(e.target.innerHTML);
-                    loadQuestion();
-                    break;
-                default:
-                    break;
+            const chosenAns = e.target.innerHTML;
+            if(chosenAns == answerCheck) {
+                alert("correct");
+                loadQuestion();
+            } else {
+                alert("wrong");
+                loadQuestion();
             }
         })
     }
