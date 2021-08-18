@@ -2,6 +2,7 @@
 const titleScreenRef = document.querySelector("#title-screen");
 const gameWindowRef = document.querySelector("#game-window");
 const diffBtnsRef = document.getElementsByClassName("difficulty-btn");
+const questionNumberRef = document.querySelector("#question-number");
 const questionTextRef = document.getElementById("question");
 const answersChoicesRef = Array.from(document.getElementsByClassName("answers-text"));
 
@@ -85,6 +86,7 @@ async function startGame(difficulty, token) {
 function loadQuestion() {
     (questionIndex++);
     questionIndex -= 1;
+    questionNumberRef.innerHTML = `Question ${questionIndex + 1}`;
     let currentQuestion = questions[questionIndex];
     questionTextRef.innerHTML = `${currentQuestion.question}`;
     for(i=0; i < answersChoicesRef.length; i++){
