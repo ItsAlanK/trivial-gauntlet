@@ -58,6 +58,7 @@ h1 {
     font-family: 'Bungee Shade', 'Arial', sans-serif;
     font-size: 5rem;
     color: #df8d30;
+    line-height: 120%;
 }
 
 h2,
@@ -69,6 +70,7 @@ p,
 a {
     font-family: 'Montserrat', 'Arial Narrow Bold', sans-serif;
     font-size: 1.5rem;
+    line-height: 1.6;
 }
 
 /* Buttons */
@@ -113,6 +115,10 @@ a {
 
 
 /* Game Screen */
+#answers{
+    width: 75%;
+}
+
 .correct {
     background-color: green;
 }
@@ -149,4 +155,18 @@ a {
 #strikes * {
     font-size: 2rem;
     padding: 2rem 0.5rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 576px) {
+    h1 {
+        font size: 3rem;
+    }
+
+    #answers {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        column-gap: 1rem;
+        row-gap: 1rem;
+    }
 }
