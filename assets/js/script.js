@@ -1,10 +1,10 @@
 const titleScreenRef = document.querySelector("#title-screen");
 const gameWindowRef = document.querySelector("#game-window");
 const diffBtnsRef = document.getElementsByClassName("difficulty-btn");
-const questionTextRef = document.querySelector("#question");
+const questionTextRef = document.getElementById("question");
 const answersChoicesRef = document.getElementsByClassName("answers-text");
 
-console.log(answersChoicesRef);
+let questions = [];
 
 document.addEventListener("DOMContentLoaded", async function () {
     let difficultyBtns = diffBtnsRef;
@@ -56,22 +56,27 @@ async function getQuestions(difficultyChoice, sessionToken) {
  * @param {array} questionList 
  */
 function extractData(questionList) {
-    console.log(questionList);
     questionList.map((item) => {
         let question = item.question;
         let answers = item.incorrect_answers;
         let correctAnswer = item.correct_answer;
         answers.push(correctAnswer);
         shuffle(answers);
+        questions.push({
+            question: question,
+            answers: answers,
+            correctAnswer: correctAnswer
+        })
     })
 }
 
 /** 
  * Resets score & progress values and calls functions to start a new game.
  */
-function startGame(difficulty, token) {
+async function startGame(difficulty, token) {
     getQuestions(difficulty, token);
     hideScreen();
+    await console.log(questions);
 }
 
 /**
