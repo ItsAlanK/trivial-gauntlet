@@ -6,6 +6,7 @@ const questionNumberRef = document.querySelector("#question-number");
 const questionTextRef = document.getElementById("question");
 const answersChoicesRef = Array.from(document.getElementsByClassName("answers-text"));
 const strikesRef = document.querySelector("#strikes");
+const progressMarkerRef = document.querySelector("#progress-marker");
 
 // variables
 let questions = [];
@@ -110,6 +111,7 @@ function loadQuestion() {
             answersChoicesRef[i].innerHTML = currentQuestion.answers[i];
         }
         answerCheck = currentQuestion.correctAnswer;
+        progressMarkerRef.style.gridColumn = questionIndex;
         questionIndex++;
     }
 }
