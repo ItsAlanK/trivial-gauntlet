@@ -10,6 +10,7 @@ const answersChoicesRef = Array.from(document.getElementsByClassName("answers-te
 let questions = [];
 let questionIndex = 0;
 let answerCheck = "";
+let score = 0;
 
 document.addEventListener("DOMContentLoaded", async function () {
     let sessionToken = await getToken();
@@ -81,6 +82,8 @@ function extractData(questionList) {
  */
 async function startGame(difficulty, token) {
     await getQuestions(difficulty, token);
+    score = 0;
+    questionIndex = 0;
     hideScreen();
     loadQuestion();
     checkAnswer();
