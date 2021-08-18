@@ -167,7 +167,13 @@ function hideScreen() {
  */
 function gameWon() {
     if (questionIndex > questions.length) {
-        alert("winner");
+        Swal.fire({
+            title: 'Winner!',
+            text: 'You have challenged the gauntlet and won',
+            icon: 'success',
+            confirmButtonText: 'Try Again?'
+        })
+        reset();
     }
 }
 
