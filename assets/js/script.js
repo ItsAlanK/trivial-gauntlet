@@ -87,6 +87,9 @@ function loadQuestion() {
     questionIndex -= 1;
     let currentQuestion = questions[questionIndex];
     questionTextRef.innerHTML = `${currentQuestion.question}`;
+    for(i=0; i < answersChoicesRef.length; i++){
+        answersChoicesRef[i].innerHTML = currentQuestion.answers[i];
+    }
 }
 
 /**
