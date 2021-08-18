@@ -101,7 +101,12 @@ async function startGame(difficulty, token) {
  */
 function loadQuestion() {
     if (strikeCounter >= 3) {
-        alert("Game Over");
+        Swal.fire({
+            title: 'Game Over!',
+            text: 'You have lost to the gauntlet',
+            icon: 'error',
+            confirmButtonText: 'Try Again?'
+        })
         reset();
     } else {
         questionNumberRef.innerHTML = `Question ${questionIndex + 1}`;
