@@ -111,10 +111,28 @@ a {
     width: 20rem;
 }
 
+
+/* Game Screen */
 .correct {
     background-color: green;
 }
 
 .incorrect {
     background-color: red;
+}
+
+#progress {
+    width: 75%;
+    height: 1rem;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(50, 1fr);
+}
+
+#progress-marker{
+    color: red;
+    font-size: 3rem;
+    bottom: 3rem;
+    position: relative;
+    grid-column: 1;
 }
