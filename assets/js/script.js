@@ -11,6 +11,8 @@ let questions = [];
 let questionIndex = 0;
 let answerCheck = "";
 let score = 0;
+let strikes = 0;
+
 
 document.addEventListener("DOMContentLoaded", async function () {
     let sessionToken = await getToken();
@@ -84,6 +86,7 @@ async function startGame(difficulty, token) {
     await getQuestions(difficulty, token);
     score = 0;
     questionIndex = 0;
+    strikes = 0;
     hideScreen();
     loadQuestion();
     checkAnswer();
@@ -114,10 +117,12 @@ function checkAnswer() {
             const chosenAns = e.target.innerHTML;
             if(chosenAns == answerCheck) {
                 alert("correct");
+                score += 1;
                 loadQuestion();
             } else {
                 alert("wrong");
                 loadQuestion();
+                strikes += 1;
             }
         })
     }
