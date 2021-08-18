@@ -83,6 +83,10 @@ async function startGame(difficulty, token) {
     loadQuestion();
 }
 
+/** 
+ * Increments questionIndex and assigns question and answer values to respective
+ * elements based off questionIndex.
+ */
 function loadQuestion() {
     (questionIndex++);
     questionIndex -= 1;
