@@ -5,6 +5,7 @@ const diffBtnsRef = document.getElementsByClassName("difficulty-btn");
 const questionNumberRef = document.querySelector("#question-number");
 const questionTextRef = document.getElementById("question");
 const answersChoicesRef = Array.from(document.getElementsByClassName("answers-text"));
+const strikesRef = document.querySelector("#strikes");
 
 // variables
 let questions = [];
@@ -12,7 +13,6 @@ let questionIndex = 0;
 let answerCheck = "";
 let score = 0;
 let strikes = 0;
-
 
 document.addEventListener("DOMContentLoaded", async function () {
     let sessionToken = await getToken();
@@ -117,6 +117,7 @@ function checkAnswer() {
             const chosenAns = e.target.innerHTML;
             if (chosenAns == answerCheck) {
                 score += 1;
+                strikesRef.innerHTML = strikes;
                 e.target.classList.add("correct");
                 setTimeout(() => (
                     e.target.classList.remove("correct"),
@@ -124,6 +125,7 @@ function checkAnswer() {
                 ), 2000);
             } else {
                 strikes += 1;
+                strikesRef.innerHTML = strikes;
                 e.target.classList.add("incorrect");
                 setTimeout(() => (
                     e.target.classList.remove("incorrect"),
