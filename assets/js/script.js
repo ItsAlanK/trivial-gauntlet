@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 default:
                     break;
             }
-        })
+        });
     }
-})
+});
 
 /**
  * Gets a session token on page load to ensure questions are not duplicated
@@ -75,8 +75,8 @@ function extractData(questionList) {
             question: question,
             answers: answers,
             correctAnswer: correctAnswer
-        })
-    })
+        });
+    });
 }
 
 /** 
@@ -107,7 +107,7 @@ function loadQuestion() {
             Final level: ${questionIndex}/50`,
             icon: 'error',
             confirmButtonText: 'Try Again?',
-        })
+        });
         reset();
     } else {
         questionNumberRef.innerHTML = `Question ${questionIndex + 1}`;
@@ -150,7 +150,7 @@ function checkAnswer() {
                     loadQuestion()
                 ), 1000);
             }
-        })
+        });
     }
 }
 
@@ -173,7 +173,7 @@ function gameWon() {
             text: 'You have challenged the gauntlet and won',
             icon: 'success',
             confirmButtonText: 'Play again?'
-        })
+        });
         reset();
     }
 }
