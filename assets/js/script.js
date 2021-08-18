@@ -1,6 +1,10 @@
 const titleScreenRef = document.querySelector("#title-screen");
 const gameWindowRef = document.querySelector("#game-window");
 const diffBtnsRef = document.getElementsByClassName("difficulty-btn");
+const questionTextRef = document.querySelector("#question");
+const answersChoicesRef = document.querySelector(".answers-text");
+
+console.log(answersChoicesRef);
 
 document.addEventListener("DOMContentLoaded", async function () {
     let difficultyBtns = diffBtnsRef;
@@ -45,7 +49,6 @@ async function getQuestions(difficultyChoice, sessionToken) {
     let rawData = await response.json();
     rawData = rawData.results;
     extractData(rawData);
-
 }
 
 /**
