@@ -103,9 +103,10 @@ function loadQuestion() {
     if (strikeCounter >= 3) {
         Swal.fire({
             title: 'Game Over!',
-            text: 'You have lost to the gauntlet',
+            text: `You have lost to the gauntlet.
+            Final level: ${questionIndex}/50`,
             icon: 'error',
-            confirmButtonText: 'Try Again?'
+            confirmButtonText: 'Try Again?',
         })
         reset();
     } else {
@@ -171,7 +172,7 @@ function gameWon() {
             title: 'Winner!',
             text: 'You have challenged the gauntlet and won',
             icon: 'success',
-            confirmButtonText: 'Try Again?'
+            confirmButtonText: 'Play again?'
         })
         reset();
     }
