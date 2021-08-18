@@ -12,7 +12,8 @@ let questions = [];
 let questionIndex = 0;
 let answerCheck = "";
 let score = 0;
-let strikes = 0;
+let strikes = "";
+let strikeCounter = 0;
 
 document.addEventListener("DOMContentLoaded", async function () {
     let sessionToken = await getToken();
@@ -86,7 +87,8 @@ async function startGame(difficulty, token) {
     await getQuestions(difficulty, token);
     score = 0;
     questionIndex = 0;
-    strikes = 0;
+    strikes = "";
+    strikeCounter = 0;
     hideScreen();
     loadQuestion();
     checkAnswer();
@@ -97,14 +99,19 @@ async function startGame(difficulty, token) {
  * elements based off questionIndex.
  */
 function loadQuestion() {
-    questionNumberRef.innerHTML = `Question ${questionIndex + 1}`;
-    let currentQuestion = questions[questionIndex];
-    questionTextRef.innerHTML = `${currentQuestion.question}`;
-    for (i = 0; i < answersChoicesRef.length; i++) {
-        answersChoicesRef[i].innerHTML = currentQuestion.answers[i];
+    if (strikeCounter >= 3) {
+        alert("Game Over");
+        reset();
+    } else {
+        questionNumberRef.innerHTML = `Question ${questionIndex + 1}`;
+        let currentQuestion = questions[questionIndex];
+        questionTextRef.innerHTML = `${currentQuestion.question}`;
+        for (i = 0; i < answersChoicesRef.length; i++) {
+            answersChoicesRef[i].innerHTML = currentQuestion.answers[i];
+        }
+        answerCheck = currentQuestion.correctAnswer;
+        questionIndex++;
     }
-    answerCheck = currentQuestion.correctAnswer;
-    questionIndex++;
 }
 
 /** 
@@ -124,7 +131,8 @@ function checkAnswer() {
                     loadQuestion()
                 ), 2000);
             } else {
-                strikes += 1;
+                strikes += '<i class="fas fa-skull"></i>';
+                strikeCounter++;
                 strikesRef.innerHTML = strikes;
                 e.target.classList.add("incorrect");
                 setTimeout(() => (
@@ -142,6 +150,15 @@ function checkAnswer() {
 function hideScreen() {
     titleScreenRef.classList.add("hidden");
     gameWindowRef.classList.remove("hidden");
+}
+
+function reset() {
+    titleScreenRef.classList.remove("hidden");
+    gameWindowRef.classList.add("hidden");
+    score = 0;
+    questionIndex = 0;
+    strikesRef.innerHTML = "";
+    strikeCounter = 0;
 }
 
 //Fisher-Yates algorithm
