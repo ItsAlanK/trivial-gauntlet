@@ -9,12 +9,12 @@ const answersChoicesRef = Array.from(document.getElementsByClassName("answers-te
 // variables
 let questions = [];
 let questionIndex = 0;
+let answerCheck = "";
 
 document.addEventListener("DOMContentLoaded", async function () {
-    let difficultyBtns = diffBtnsRef;
     let sessionToken = await getToken();
 
-    for (let button of difficultyBtns) {
+    for (let button of diffBtnsRef) {
         button.addEventListener("click", function (e) {
             switch (e.target.id) {
                 case "easy-btn":
@@ -76,11 +76,14 @@ function extractData(questionList) {
 
 /** 
  * Resets score & progress values and calls functions to start a new game.
+ * @param {string} difficulty
+ * @param {string} sessionToken
  */
 async function startGame(difficulty, token) {
     await getQuestions(difficulty, token);
     hideScreen();
     loadQuestion();
+    checkAnswer();
 }
 
 /** 
@@ -88,13 +91,61 @@ async function startGame(difficulty, token) {
  * elements based off questionIndex.
  */
 function loadQuestion() {
-    (questionIndex++);
-    questionIndex -= 1;
     questionNumberRef.innerHTML = `Question ${questionIndex + 1}`;
     let currentQuestion = questions[questionIndex];
     questionTextRef.innerHTML = `${currentQuestion.question}`;
-    for(i=0; i < answersChoicesRef.length; i++){
+    for (i = 0; i < answersChoicesRef.length; i++) {
         answersChoicesRef[i].innerHTML = currentQuestion.answers[i];
+    }
+    answerCheck = currentQuestion.correctAnswer;
+    questionIndex++;
+}
+
+
+function checkAnswer() {
+    for (let button of answersChoicesRef) {
+        button.addEventListener("click", function (e) {
+            switch (e.target.id) {
+                case "answer1":
+                    if (e.target.innerHTML == answerCheck) {
+                        alert("correct");
+                    } else {
+                        alert("wrong");
+                    }
+                    console.log(e.target.innerHTML);
+                    loadQuestion();
+                    break;
+                case "answer2":
+                    if (e.target.innerHTML == answerCheck) {
+                        alert("correct");
+                    } else {
+                        alert("wrong");
+                    }
+                    console.log(e.target.innerHTML);
+                    loadQuestion();
+                    break;
+                case "answer3":
+                    if (e.target.innerHTML == answerCheck) {
+                        alert("correct");
+                    } else {
+                        alert("wrong");
+                    }
+                    console.log(e.target.innerHTML);
+                    loadQuestion();
+                    break;
+                case "answer4":
+                    if (e.target.innerHTML == answerCheck) {
+                        alert("correct");
+                    } else {
+                        alert("wrong");
+                    }
+                    console.log(e.target.innerHTML);
+                    loadQuestion();
+                    break;
+                default:
+                    break;
+            }
+        })
     }
 }
 
