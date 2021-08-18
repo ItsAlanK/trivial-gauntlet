@@ -1,10 +1,13 @@
+// Refs
 const titleScreenRef = document.querySelector("#title-screen");
 const gameWindowRef = document.querySelector("#game-window");
 const diffBtnsRef = document.getElementsByClassName("difficulty-btn");
 const questionTextRef = document.getElementById("question");
-const answersChoicesRef = document.getElementsByClassName("answers-text");
+const answersChoicesRef = Array.from(document.getElementsByClassName("answers-text"));
 
+// variables
 let questions = [];
+let questionIndex = 0;
 
 document.addEventListener("DOMContentLoaded", async function () {
     let difficultyBtns = diffBtnsRef;
@@ -76,7 +79,14 @@ function extractData(questionList) {
 async function startGame(difficulty, token) {
     getQuestions(difficulty, token);
     hideScreen();
-    await console.log(questions);
+}
+
+function loadQuestion() {
+    (questionIndex++);
+    questionIndex -= 1;
+    let currentQuestion = questions[questionIndex];
+    questionTextRef.innerHTML = `${currentQuestion.question}`;
+    console.log(questionTextRef.innerHTML);
 }
 
 /**
