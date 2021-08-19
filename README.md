@@ -109,5 +109,22 @@ The site was deployed to GitHub pages. The live site can be found at: [https://i
 
 ## Technologies ##
 
+The main technologies used in this project are:
+
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): Houses the basic framework for the project.
+
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS): is used for the styling of the site.
+    * [CSS Grids](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout): is used to control the layout of buttons and progress bar and responsive changes to the game.
+    * [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox): is used to organize and align the main containers housing the games' screens as well as their text elements.
+
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): is used for fetching the questions from the database using an API. It also handles all the loading of data to the site and the logic used to run the game.
+
+* [Open Trivia Database](https://opentdb.com/): is the API used to generate the questions for the quiz.
+
+* [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON): Is the format in which the questions are received from the API which must then be parsed using
+`response.json();`
+
+* [Sweet Alert 2](https://sweetalert2.github.io/): Is used to create the gameover/gamewon alerts as a more stylish alternative to standard browser alerts.
+
 
 ## Credits ##
