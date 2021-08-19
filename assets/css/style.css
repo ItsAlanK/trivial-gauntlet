@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: slategray;
+    background-color: #4c4c4c;
 }
 
 .container {
@@ -22,6 +22,7 @@ body {
     background-color: #FCF7FF;
     max-width: 80rem;
     margin: auto;
+    box-shadow: 0px 1.5rem 1rem black;
 }
 
 .flex {
@@ -85,6 +86,9 @@ a {
 
 .btn:hover {
     cursor: pointer;
+    box-shadow: 0px 0.5rem 0.5rem #4c4c4c;
+    transform: translateY(-0.3rem);
+    transition: 100ms;
 }
 
 .difficulty-btn {
@@ -120,23 +124,24 @@ a {
 }
 
 .correct {
-    background-color: green;
+    background-color: #79b473;
 }
 
 .incorrect {
-    background-color: red;
+    background-color: #d33e43;
 }
 
 #progress {
     width: 75%;
     height: 1rem;
-    background-color: black;
+    background-color: #4c4c4c;
     display: grid;
     grid-template-columns: repeat(50, 1fr);
+    margin-bottom: 2rem;
 }
 
 #progress-marker {
-    color: red;
+    color: #df8d30;
     font-size: 3rem;
     bottom: 3.2rem;
     position: relative;
@@ -144,7 +149,7 @@ a {
 }
 
 #finish-line {
-    color: red;
+    color: #df8d30;
     font-size: 3rem;
     bottom: 3rem;
     left: 2.5rem;
@@ -155,6 +160,7 @@ a {
 #strikes * {
     font-size: 2rem;
     padding: 2rem 0.5rem;
+    color: #e63946;
 }
 
 /* Media Queries */
