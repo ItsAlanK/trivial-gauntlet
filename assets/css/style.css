@@ -128,11 +128,11 @@ a {
 }
 
 .correct {
-    background-color: #79b473;
+    background-color: #5fc254;
 }
 
 .incorrect {
-    background-color: #d33e43;
+    background-color: #DC493A;
 }
 
 #progress {
@@ -164,7 +164,7 @@ a {
 #strikes * {
     font-size: 2rem;
     padding: 2rem 0.5rem;
-    color: #e63946;
+    color: #DC493A;
 }
 
 /* Media Queries */
