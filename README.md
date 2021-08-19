@@ -77,8 +77,10 @@ Typography icons used for progress bar and strike indicators are found on [Font 
 
 ### Potential Future Features
 - Topic Selections
+    - Add additional options screen to allow user to customize quiz more by selecting the topic or length of quiz. Can all be achieved through editing API string based on selections.
 
 - High Scores List
+    - Use server side highscores file to save users' progress and display top scores on home or game screen as encentive. Possibly display top three scores on progress bar with extra markers as closer targets to beat.
 
 ## Testing ##
 
@@ -88,6 +90,7 @@ This feedback contained suggestions for improving quality of life as well as poi
 
 While I worked on this project through Google Chrome I also loaded the page at various intervals on Mozilla Firefox and Microsoft Edge to ensure there was not major browser specific issues.
 
+### Bugs ###
 
 ## Deployment ##
 

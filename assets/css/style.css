@@ -101,11 +101,13 @@ a {
     grid-template-rows: 1fr 1fr;
     column-gap: 1rem;
     row-gap: 1rem;
+    width: 75%;
 }
 
 .answers-text {
     color: #FCF7FF;
     margin: 0.5rem 0;
+    align-self: center;
 }
 
 /* Title Screen */
@@ -121,10 +123,6 @@ a {
 /* Game Screen */
 #game-window {
     padding: 2rem;
-}
-
-#answers {
-    width: 75%;
 }
 
 .correct {
@@ -163,7 +161,7 @@ a {
 
 #strikes * {
     font-size: 2rem;
-    padding: 2rem 0.5rem;
+    padding: 1rem 0.5rem;
     color: #DC493A;
 }
 

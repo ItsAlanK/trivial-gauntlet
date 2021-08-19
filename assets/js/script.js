@@ -121,7 +121,6 @@ function loadQuestion() {
         progressMarkerRef.style.gridColumn = questionIndex;
         questionIndex++;
         ready = true;
-        console.log(ready);
     }
 }
 
@@ -130,12 +129,12 @@ function loadQuestion() {
  * answerCheck set by loadQuestion()
  */
 function checkAnswer() {
-        for (let button of answersChoicesRef) {
-            button.addEventListener("click", function (e) {
-                ready = false;
-                console.log(ready);
-                const chosenAns = e.target.innerHTML;
+    for (let button of answersChoicesRef) {
+        button.addEventListener("click", function (e) {
+            const chosenAns = e.target.innerHTML;
+            if (ready == true) {
                 if (chosenAns == answerCheck) {
+                    ready = false;
                     score += 1;
                     strikesRef.innerHTML = strikes;
                     e.target.classList.add("correct");
@@ -145,6 +144,7 @@ function checkAnswer() {
                         loadQuestion()
                     ), 1000);
                 } else {
+                    ready = false;
                     strikes += '<i class="fas fa-skull"></i>';
                     strikeCounter++;
                     strikesRef.innerHTML = strikes;
@@ -155,8 +155,9 @@ function checkAnswer() {
                         loadQuestion()
                     ), 1000);
                 }
-            });
-        }
+            }
+        });
+    }
 }
 
 /**
