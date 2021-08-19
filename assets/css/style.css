@@ -6,11 +6,15 @@
     margin: 0;
     padding: 0;
     border: none;
-    font-size: 10px;
+}
+
+html{
+    font-size: 62.5%;
 }
 
 body {
     background-color: #4c4c4c;
+    font-size: 1.6rem;
 }
 
 .container {
