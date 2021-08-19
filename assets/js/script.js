@@ -15,6 +15,7 @@ let answerCheck = "";
 let score = 0;
 let strikes = "";
 let strikeCounter = 0;
+let ready = false;
 
 document.addEventListener("DOMContentLoaded", async function () {
     let sessionToken = await getToken();
@@ -119,6 +120,8 @@ function loadQuestion() {
         answerCheck = currentQuestion.correctAnswer;
         progressMarkerRef.style.gridColumn = questionIndex;
         questionIndex++;
+        ready = true;
+        console.log(ready);
     }
 }
 
@@ -127,31 +130,33 @@ function loadQuestion() {
  * answerCheck set by loadQuestion()
  */
 function checkAnswer() {
-    for (let button of answersChoicesRef) {
-        button.addEventListener("click", function (e) {
-            const chosenAns = e.target.innerHTML;
-            if (chosenAns == answerCheck) {
-                score += 1;
-                strikesRef.innerHTML = strikes;
-                e.target.classList.add("correct");
-                gameWon();
-                setTimeout(() => (
-                    e.target.classList.remove("correct"),
-                    loadQuestion()
-                ), 1000);
-            } else {
-                strikes += '<i class="fas fa-skull"></i>';
-                strikeCounter++;
-                strikesRef.innerHTML = strikes;
-                e.target.classList.add("incorrect");
-                gameWon();
-                setTimeout(() => (
-                    e.target.classList.remove("incorrect"),
-                    loadQuestion()
-                ), 1000);
-            }
-        });
-    }
+        for (let button of answersChoicesRef) {
+            button.addEventListener("click", function (e) {
+                ready = false;
+                console.log(ready);
+                const chosenAns = e.target.innerHTML;
+                if (chosenAns == answerCheck) {
+                    score += 1;
+                    strikesRef.innerHTML = strikes;
+                    e.target.classList.add("correct");
+                    gameWon();
+                    setTimeout(() => (
+                        e.target.classList.remove("correct"),
+                        loadQuestion()
+                    ), 1000);
+                } else {
+                    strikes += '<i class="fas fa-skull"></i>';
+                    strikeCounter++;
+                    strikesRef.innerHTML = strikes;
+                    e.target.classList.add("incorrect");
+                    gameWon();
+                    setTimeout(() => (
+                        e.target.classList.remove("incorrect"),
+                        loadQuestion()
+                    ), 1000);
+                }
+            });
+        }
 }
 
 /**

@@ -82,8 +82,29 @@ Typography icons used for progress bar and strike indicators are found on [Font 
 
 ## Testing ##
 
+Throughout development the game was shared with friends and colleagues in order to search for bugs and any issues related to layout, navigation or overall usability. Their feedback was taken on an ongoing basis and adjustments were made to improve their overall experience. 
+
+This feedback contained suggestions for improving quality of life as well as pointing out bugs such as the ability to click multiple times in a single question. This feedback was used to make improvements to the game on an ongoing basis. I ensured that some of my testers were using apple and some android devices and that some used phones while others also used tablets and desktops in order to ensure all forms were covered in my design.
+
+While I worked on this project through Google Chrome I also loaded the page at various intervals on Mozilla Firefox and Microsoft Edge to ensure there was not major browser specific issues.
+
 
 ## Deployment ##
+
+The site was deployed to GitHub pages. The live site can be found at: [https://itsalank.github.io/trivial-gauntlet/](https://itsalank.github.io/trivial-gauntlet/)
+
+* The process required to deploy the site are:
+    * From the site's repository on GitHub, navigate to the settings via the link found in the ribbon menu below the repo name.
+    * Select the "pages" section in the sidebar menu to the left of the screen.
+    * In the "Source" section, select the branch you wish to use as the source of the site if you have multiple branches/versions. Otherwise select the main branch.
+    * Select the root folder and click save.
+    * Deployment may take a few seconds or minutes, after which navigate back to the pages section and find the link to the live site highlighted in green.
+    * _Alternatively once the page site is deployed on pages you can find a link to the site via the enviroments section to the right of the main repository page._
+
+* To create a local copy of this project:
+    * In the terminal type: 
+    ```git clone https://github.com/ItsAlanK/trivial-gauntlet.git```
+    * This will create a copy of all files on your machine.
 
 
 ## Technologies ##
