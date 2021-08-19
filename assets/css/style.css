@@ -17,33 +17,6 @@ body {
     font-size: 1.6rem;
 }
 
-.container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    max-width: 80rem;
-    margin: auto;
-    box-shadow: 0px 1.5rem 1rem #222222;
-    background-color: white;
-}
-
-.flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.grid {
-    display: grid;
-    width: 100%;
-}
-
-.hidden {
-    display: none;
-}
-
 /* Headings and Paragraphs */
 
 h1,
@@ -76,6 +49,33 @@ a {
     font-family: 'Montserrat', 'Arial Narrow Bold', sans-serif;
     font-size: 1.5rem;
     line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: auto;
+    box-shadow: 0px 1.5rem 1rem #222222;
+    background-color: white;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Buttons */
