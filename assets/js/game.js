@@ -189,7 +189,6 @@ function gameWon(questions) {
             icon: 'success',
             confirmButtonText: 'Play again?'
         });
-        finishMarkerRef.classList.add = "hidden";
         reset();
     }
 }

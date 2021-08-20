@@ -136,6 +136,22 @@ While I worked on this project through Google Chrome I also loaded the page at v
 ### Bugs ###
 Bugs were logged and tracked using GitHub's built in issues system as they were discovered and closed as they were fixed.
 
+* Answer Button was always active even after selecting an answer
+    * Solution - Using a variable set to false by default is set to true when the first question loads. Each time an answer is selected this is reset to false until the next question is loaded. Using if statements, answer buttons are only active when ```ready = true```
+
+* Progress bar did not move until the second round of the quiz.
+    * Solution - Within loadQuestion() function which controlled incrementing the question index and moving the progress marker `questionIndex++` was below `progressMarkerRef.style.gridColumn = questionIndex;` causing the progress marker to be one round behind all the time.
+    ```
+        questionIndex++;
+        progressMarkerRef.style.gridColumn = questionIndex;
+        ready = true;
+    ```
+* After playing a round and resetting the game the progress marker did not reset until the first question was answered. 
+    * Solution - This was fixed by adding the line `progressMarkerRef.style.gridColumn = 1;` to `function reset()`
+
+* Game won alert did not fire after completing the 50th question leading to error state and requiring a refresh to play again.
+    * Solution - `gameWon()` was missing an = in `if(questionIndex >= questions.length)` This meant the function did not fire the alert.
+
 ## Deployment ##
 
 The site was deployed to GitHub pages. The live site can be found at: [https://itsalank.github.io/trivial-gauntlet/](https://itsalank.github.io/trivial-gauntlet/)
