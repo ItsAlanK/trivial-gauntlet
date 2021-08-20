@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/50309a1295.js" crossorigin="anonymous"></script>
-    
+
     <title>Trivial Gauntlet - How far can you go?</title>
 </head>
 
@@ -22,14 +22,15 @@
     <div class="container">
         <div id="title-screen" class="flex">
             <div id="main-title">
-                <h1>Trivial Gauntlet</h1>
-                <h2>How Deep Will You Get?</h2>
+                <h1 class="heading">Trivial Gauntlet</h1>
+                <h2 class="body-text">How Deep Will You Get?</h2>
             </div>
             <div id="game-desc">
-                <p>Answer trivia questions in this gauntlet. See how far you can get; but remember, three strikes and you're out!</p>
+                <p class="body-text">Answer trivia questions in this gauntlet. See how far you can get; but remember,
+                    three strikes and you're out!</p>
             </div>
             <div id="difficulty-menu" class="grid">
-                <h3>Choose Your Difficulty</h3>
+                <h3 class="body-text">Choose Your Difficulty</h3>
                 <a class="btn difficulty-btn" id="easy-btn" aria-label="Choose difficulty easy">Simple</a>
                 <a class="btn difficulty-btn" id="medium-btn" aria-label="Choose difficulty medium">Intermediate</a>
                 <a class="btn difficulty-btn" id="hard-btn" aria-label="Choose difficulty hard">Gruelling</a>
@@ -41,8 +42,8 @@
                 <i class="fas fa-flag-checkered" id="finish-line"></i>
             </div>
             <div id="strikes"></div>
-            <h1 id="question-number"></h1>
-            <h3 id="question"></h3>
+            <h1 id="question-number" class="heading"></h1>
+            <h3 class="body-text" id="question"></h3>
             <div id="answers" class="grid">
                 <a class="answers-text btn answer-btn" id="answer1"></a>
                 <a class="answers-text btn answer-btn" id="answer2"></a>
