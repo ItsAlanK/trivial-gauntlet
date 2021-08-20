@@ -170,6 +170,17 @@ a {
 }
 
 /* Media Queries */
+@media screen and (max-width: 350px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2,
+    p {
+        font-size: 1.25rem;
+    }
+}
+
 @media screen and (max-width: 576px) {
     h1 {
         font-size: 4.5rem;
@@ -180,16 +191,5 @@ a {
         grid-template-rows: repeat(4, 1fr);
         column-gap: 1rem;
         row-gap: 1rem;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    h1 {
-        font-size: 3.5rem;
-    }
-
-    h2,
-    p {
-        font-size: 1.25rem;
     }
 }
