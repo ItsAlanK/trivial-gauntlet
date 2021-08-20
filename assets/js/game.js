@@ -171,8 +171,8 @@ function checkAnswer(questions) {
  * @param {Boolean} If true shows game screen, if false shows title screen
  */
 function showGameScreen(showScreen) {
-    showScreen ? titleScreenRef.classList.add("hidden") : titleScreenRef.classList.add("hidden");
-    showScreen ? gameWindowRef.classList.remove("hidden") : gameWindowRef.classList.remove("hidden");
+    showScreen ? titleScreenRef.classList.add("hidden") : titleScreenRef.classList.remove("hidden");
+    showScreen ? gameWindowRef.classList.remove("hidden") : gameWindowRef.classList.add("hidden");
 }
 
 /**
