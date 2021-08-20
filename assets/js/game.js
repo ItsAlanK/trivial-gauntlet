@@ -106,7 +106,7 @@ async function startGame(difficulty, token) {
 function loadQuestion(questions) {
     const questionsArray = questions;
     if (strikeCounter >= 3) {
-        Swal.fire({
+        displayMessage({
             title: 'Game Over!',
             text: `You have lost to the gauntlet.
             Final level: ${questionIndex}/50`,
@@ -181,7 +181,7 @@ function hideScreen() {
  */
 function gameWon(questions) {
     if (questionIndex > questions.length) {
-        Swal.fire({
+        displayMessage({
             title: 'Winner!',
             text: 'You have challenged the gauntlet and won',
             icon: 'success',
@@ -189,6 +189,14 @@ function gameWon(questions) {
         });
         reset();
     }
+}
+
+/**
+ * Uses Sweet Alerts 2 to fire alert based on object provided
+ * @param {Object} Message details to be displayed in alert
+ */
+function displayMessage(message) {
+    Swal.fire(message);
 }
 
 /**
