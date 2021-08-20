@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat:wght@300;500;700&display=swap');
 
 /* Global Style */
+:root{
+    --white: #fcf7ff;
+    --black: #222222;
+    --orange: #df8d30;
+    --grey: #4c4c4c;
+    --teal: #278789;
+    --red: #dc493a;
+    --green: #5fc254;
+
+}
 
 * {
     margin: 0;
@@ -13,7 +23,7 @@ html{
 }
 
 body {
-    background-color: #4c4c4c;
+    background-color: var(--grey);
     font-size: 1.6rem;
 }
 
@@ -35,7 +45,7 @@ a {
 h1 {
     font-family: 'Bungee Shade', 'Arial', sans-serif;
     font-size: 5rem;
-    color: #df8d30;
+    color: var(--orange);
     line-height: 120%;
 }
 
@@ -59,8 +69,8 @@ a {
     align-items: center;
     max-width: 80rem;
     margin: auto;
-    box-shadow: 0px 1.5rem 1rem #222222;
-    background-color: white;
+    box-shadow: 0px 1.5rem 1rem var(--black);
+    background-color: var(--white);
 }
 
 .flex {
@@ -84,20 +94,20 @@ a {
     font-weight: 700;
     padding: 0.5rem;
     margin: 0.5rem;
-    background-color: #278789;
+    background-color: var(--teal);
     border-radius: 0.5rem;
 }
 
 .btn:hover {
     cursor: pointer;
-    box-shadow: 0px 0.5rem 0.5rem #4c4c4c;
+    box-shadow: 0px 0.5rem 0.5rem var(--grey);
     transform: translateY(-0.3rem);
     transition: 100ms;
 }
 
 .difficulty-btn {
     font-size: 2rem;
-    color: #FCF7FF
+    color: var(--white);
 }
 
 #answers {
@@ -109,7 +119,7 @@ a {
 }
 
 .answers-text {
-    color: #FCF7FF;
+    color: var(--white);
     margin: 0.5rem 0;
     align-self: center;
 }
@@ -130,24 +140,24 @@ a {
 }
 
 .correct {
-    background-color: #5fc254;
+    background-color: var(--green);
 }
 
 .incorrect {
-    background-color: #DC493A;
+    background-color: var(--red);
 }
 
 #progress {
     width: 75%;
     height: 1rem;
-    background-color: #4c4c4c;
+    background-color: var(--grey);
     display: grid;
     grid-template-columns: repeat(50, 1fr);
     margin-bottom: 2rem;
 }
 
 #progress-marker {
-    color: #df8d30;
+    color: var(--orange);
     font-size: 3rem;
     bottom: 3.2rem;
     position: relative;
@@ -155,7 +165,7 @@ a {
 }
 
 #finish-line {
-    color: #df8d30;
+    color: var(--orange);
     font-size: 3rem;
     bottom: 3rem;
     left: 2.5rem;
@@ -166,11 +176,11 @@ a {
 #strikes * {
     font-size: 2rem;
     padding: 1rem 0.5rem;
-    color: #DC493A;
+    color: var(--red);
 }
 
 .swal2-styled.swal2-confirm {
-    background-color: #df8d30;
+    background-color: var(--orange);
     font-size: 2rem;
 }
 
