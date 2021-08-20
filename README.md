@@ -111,7 +111,30 @@ This feedback contained suggestions for improving quality of life as well as poi
 
 While I worked on this project through Google Chrome I also loaded the page at various intervals on Mozilla Firefox and Microsoft Edge to ensure there was not major browser specific issues.
 
+
+### Validator Testing ###
+* HTML
+    * No errors present when passing through [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fitsalank.github.io%2Ftrivial-gauntlet%2F)
+    * Some warnings are present however they relate to empty heading tags which are being populated dynamically by the game.js file
+        * *Warning 1* - **Empty heading.** ```<h1 id="question-number" class="heading"></h1>``` Line 45
+        * *Warning 2* - **Empty heading.** ```<h3 class="body-text" id="question"></h3>``` Line 46
+
+* CSS
+    * No errors present when passing through [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fitsalank.github.io%2Ftrivial-gauntlet%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+    * All warnings present relate to global variables set in ```:root {}```
+
+* Javascript
+    * No errors present when passing through [JSHint](https://jshint.com/)
+    * 8 Warnings present:
+        * 4 refer to async functions only available in ES8
+        * 2 refer to the use of functions within for loops which do not create any issues
+        * 2 refer to the use of an expression in ```function showGameScreen()```
+* Lighthouse
+    * All metrics above 90 using Chrome DevTools' Lighthouse audit
+    ![Lighthouse Score](docs/images/lighthouse-audit.png)
+
 ### Bugs ###
+Bugs were logged and tracked using GitHub's built in issues system as they were discovered and closed as they were fixed.
 
 ## Deployment ##
 
