@@ -191,6 +191,7 @@ function reset() {
     questionIndex = 0;
     strikesRef.innerHTML = "";
     strikeCounter = 0;
+    progressMarkerRef.style.gridColumn = 1;
 }
 
 //Fisher-Yates algorithm
