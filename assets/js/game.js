@@ -93,7 +93,7 @@ async function startGame(difficulty, token) {
     questionIndex = 0;
     strikes = "";
     strikeCounter = 0;
-    hideScreen();
+    showGameScreen(true);
     loadQuestion(questionsArray);
     checkAnswer(questionsArray);
 }
@@ -167,11 +167,12 @@ function checkAnswer(questions) {
 }
 
 /**
- * Hides title screen and reveals game screen.
+ * Toggles between title and game screen
+ * @param {Boolean} If true shows game screen, if false shows title screen
  */
-function hideScreen() {
-    titleScreenRef.classList.add("hidden");
-    gameWindowRef.classList.remove("hidden");
+function showGameScreen(showScreen) {
+    showScreen ? titleScreenRef.classList.add("hidden") : titleScreenRef.classList.add("hidden");
+    showScreen ? gameWindowRef.classList.remove("hidden") : gameWindowRef.classList.remove("hidden");
 }
 
 /**
@@ -203,8 +204,7 @@ function displayMessage(message) {
  * Resets all values to starting values and calls function to return to title screen
  */
 function reset() {
-    titleScreenRef.classList.remove("hidden");
-    gameWindowRef.classList.add("hidden");
+    showGameScreen(false);
     questionIndex = 0;
     strikesRef.innerHTML = "";
     strikeCounter = 0;
