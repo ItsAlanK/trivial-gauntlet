@@ -50,8 +50,8 @@ async function getToken() {
 
 /**
  * Uses Open Trivia Database API to create Array of questions based on difficulty option selected
- * @param {string} difficultyChoice
- * @param {string} sessionToken
+ * @param {string} chosen difficulty
+ * @param {string} session token
  */
 async function getQuestions(difficultyChoice, sessionToken) {
     let response = await fetch(`https://opentdb.com/api.php?amount=50&difficulty=${difficultyChoice}&type=multiple&token=${sessionToken}`);
@@ -62,7 +62,7 @@ async function getQuestions(difficultyChoice, sessionToken) {
 
 /**
  * Extracts question and answers from data returned from database
- * @param {array} questionList 
+ * @param {array} List of all question data
  */
 function extractData(questionList) {
     questionList.map((item) => {
@@ -81,8 +81,8 @@ function extractData(questionList) {
 
 /** 
  * Resets progress values and calls functions to start a new game.
- * @param {string} difficulty
- * @param {string} sessionToken
+ * @param {string} chosen difficulty
+ * @param {string} session token
  */
 async function startGame(difficulty, token) {
     await getQuestions(difficulty, token);
@@ -191,17 +191,17 @@ function reset() {
 }
 
 //Fisher-Yates algorithm
-function shuffle(array) {
-    var currentIndex = array.length,
+function shuffle(answers) {
+    let currentIndex = answers.length,
         randomIndex;
 
     while (currentIndex != 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
-        [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]
+        [answers[currentIndex], answers[randomIndex]] = [
+            answers[randomIndex], answers[currentIndex]
         ];
     }
 
-    return array;
+    return answers;
 }
