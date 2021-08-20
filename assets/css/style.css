@@ -169,6 +169,11 @@ a {
     color: #DC493A;
 }
 
+.swal2-styled.swal2-confirm {
+    background-color: #df8d30;
+    font-size: 2rem;
+}
+
 /* Media Queries */
 @media screen and (max-width: 576px) {
     h1 {
@@ -193,3 +198,4 @@ a {
         font-size: 1.25rem;
     }
 }
+

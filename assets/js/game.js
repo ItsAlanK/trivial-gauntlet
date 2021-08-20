@@ -12,7 +12,6 @@ const progressMarkerRef = document.querySelector("#progress-marker");
 let questions = [];
 let questionIndex = 0;
 let answerCheck = "";
-let score = 0;
 let strikes = "";
 let strikeCounter = 0;
 let ready = false;
@@ -81,13 +80,12 @@ function extractData(questionList) {
 }
 
 /** 
- * Resets score & progress values and calls functions to start a new game.
+ * Resets progress values and calls functions to start a new game.
  * @param {string} difficulty
  * @param {string} sessionToken
  */
 async function startGame(difficulty, token) {
     await getQuestions(difficulty, token);
-    score = 0;
     questionIndex = 0;
     strikes = "";
     strikeCounter = 0;
@@ -135,7 +133,6 @@ function checkAnswer() {
             if (ready == true) {
                 if (chosenAns == answerCheck) {
                     ready = false;
-                    score += 1;
                     strikesRef.innerHTML = strikes;
                     e.target.classList.add("correct");
                     gameWon();
@@ -187,7 +184,6 @@ function gameWon() {
 function reset() {
     titleScreenRef.classList.remove("hidden");
     gameWindowRef.classList.add("hidden");
-    score = 0;
     questionIndex = 0;
     strikesRef.innerHTML = "";
     strikeCounter = 0;
