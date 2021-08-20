@@ -17,7 +17,7 @@ let strikeCounter = 0;
 let ready = false;
 
 document.addEventListener("DOMContentLoaded", async function () {
-    let sessionToken = await getToken();
+    const sessionToken = await getToken();
 
     for (let button of diffBtnsRef) {
         button.addEventListener("click", function (e) {
