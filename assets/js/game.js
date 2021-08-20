@@ -7,6 +7,7 @@ const questionTextRef = document.getElementById("question");
 const answersChoicesRef = Array.from(document.getElementsByClassName("answers-text"));
 const strikesRef = document.querySelector("#strikes");
 const progressMarkerRef = document.querySelector("#progress-marker");
+const finishMarkerRef = document.querySelector("#finish-line");
 
 // variables
 let questionIndex = 0;
@@ -181,13 +182,14 @@ function showGameScreen(showScreen) {
  * @param {Array} array of questions and answers
  */
 function gameWon(questions) {
-    if (questionIndex > questions.length) {
+    if (questionIndex >= questions.length) {
         displayMessage({
             title: 'Winner!',
             text: 'You have challenged the gauntlet and won',
             icon: 'success',
             confirmButtonText: 'Play again?'
         });
+        finishMarkerRef.classList.add = "hidden";
         reset();
     }
 }
@@ -209,6 +211,7 @@ function reset() {
     strikesRef.innerHTML = "";
     strikeCounter = 0;
     progressMarkerRef.style.gridColumn = 1;
+    finishMarkerRef.classList.remove = "hidden";
 }
 
 /**

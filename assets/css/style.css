@@ -155,7 +155,7 @@ h1 {
     color: var(--orange);
     font-size: 3rem;
     bottom: 3rem;
-    left: 2.5rem;
+    left: 2rem;
     position: relative;
     grid-column: 50;
 }
