@@ -118,8 +118,8 @@ function loadQuestion() {
             answersChoicesRef[i].innerHTML = currentQuestion.answers[i];
         }
         answerCheck = currentQuestion.correctAnswer;
-        progressMarkerRef.style.gridColumn = questionIndex;
         questionIndex++;
+        progressMarkerRef.style.gridColumn = questionIndex;
         ready = true;
     }
 }
