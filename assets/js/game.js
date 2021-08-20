@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     for (let button of diffBtnsRef) {
         button.addEventListener("click", function (e) {
-            switch (e.target.id) {
+            let buttonPressed = e.target;
+            switch (buttonPressed.id) {
                 case "easy-btn":
                     startGame("easy", sessionToken);
                     break;
