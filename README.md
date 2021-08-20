@@ -191,3 +191,25 @@ The main technologies used in this project are:
 
 
 ## Credits ##
+A big thanks to my Code Institute mentor [Simen Daehlin](https://dehlin.dev/#home) for his help preparing me for this project. And proving valuable feedback and suggestions on how to improve it.
+
+### Design ###
+
+* Color palette created in: [Coolors.co](https://coolors.co/)
+
+* Fonts sourced from: [Google Fonts](https://fonts.google.com/)
+
+* Icons for progress bar and strike markers taken from [Font Awesome](https://fontawesome.com/)
+
+* Background image for desktop found on [myfreetextures.com](https://www.myfreetextures.com/wooden-floor-tiles-pattern-background-texture/)
+
+### Code ###
+* [Open Trivia Database](https://opentdb.com/api_config.php) API used to generate questions and answers for quiz
+
+* [Mozilla Dev Site](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) used to learn about async functions used when fetching and loading in questions
+
+* [Sweet Alert 2](https://sweetalert2.github.io/) used to display better alerts
+
+* [Fisher-Yates Algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm) used to shuffle correct and incorrect answers in their array
+
+* [Code Institute GitPod Template](https://github.com/Code-Institute-Org/gitpod-full-template) tools used to develop this project
