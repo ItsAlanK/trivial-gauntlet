@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 /**
  * Gets a session token on page load to ensure questions are not duplicated
- * @returns {string} sessionToken
+ * @returns {String} SessionToken
  */
 async function getToken() {
     let response = await fetch("https://opentdb.com/api_token.php?command=request");
@@ -50,20 +50,21 @@ async function getToken() {
 
 /**
  * Uses Open Trivia Database API to create Array of questions based on difficulty option selected
- * @param {string} chosen difficulty
- * @param {string} session token
+ * @param {String} string chosen difficulty
+ * @param {String} string session token
+ * @returns {Array} Array of questions and their answers
  */
 async function getQuestions(difficultyChoice, sessionToken) {
-    let response = await fetch(`https://opentdb.com/api.php?amount=50&difficulty=${difficultyChoice}&type=multiple&token=${sessionToken}`);
-    let rawData = await response.json();
-    rawData = rawData.results;
-    const questionsArray = extractData(rawData);
+    const response = await fetch(`https://opentdb.com/api.php?amount=50&difficulty=${difficultyChoice}&type=multiple&token=${sessionToken}`);
+    const rawData = await response.json();
+    const questionsArray = extractData(rawData.results);
     return questionsArray;
 }
 
 /**
  * Extracts question and answers from data returned from database
- * @param {array} List of all question data from database
+ * @param {Array} Array of all question data from database
+ * @returns {Array} Array of questions and their answers
  */
 function extractData(questionList) {
     const questionsArray = [];
@@ -190,6 +191,9 @@ function gameWon(questions) {
     }
 }
 
+/**
+ * Resets all values to starting values and calls function to return to title screen
+ */
 function reset() {
     titleScreenRef.classList.remove("hidden");
     gameWindowRef.classList.add("hidden");
@@ -199,11 +203,14 @@ function reset() {
     progressMarkerRef.style.gridColumn = 1;
 }
 
-//Fisher-Yates algorithm
+/**
+ * Fisher-Yates algorithm. Shuffles array of answers provided
+ * @param {Array} array of answers to each question
+ * @returns {Array} array of answers shuffled
+ */
 function shuffle(answers) {
     let currentIndex = answers.length,
         randomIndex;
-
     while (currentIndex != 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
@@ -211,6 +218,5 @@ function shuffle(answers) {
             answers[randomIndex], answers[currentIndex]
         ];
     }
-
     return answers;
 }
