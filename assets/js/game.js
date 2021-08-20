@@ -111,7 +111,7 @@ function loadQuestion(questions) {
             text: `You have lost to the gauntlet.
             Final level: ${questionIndex}/50`,
             icon: 'error',
-            confirmButtonText: 'Try Again?',
+            confirmButtonText: 'Try Again?'
         });
         reset();
     } else {
