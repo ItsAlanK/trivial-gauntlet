@@ -9,7 +9,6 @@ const strikesRef = document.querySelector("#strikes");
 const progressMarkerRef = document.querySelector("#progress-marker");
 
 // variables
-let questions = [];
 let questionIndex = 0;
 let answerCheck = "";
 let strikes = "";
@@ -58,48 +57,53 @@ async function getQuestions(difficultyChoice, sessionToken) {
     let response = await fetch(`https://opentdb.com/api.php?amount=50&difficulty=${difficultyChoice}&type=multiple&token=${sessionToken}`);
     let rawData = await response.json();
     rawData = rawData.results;
-    extractData(rawData);
+    const questionsArray = extractData(rawData);
+    return questionsArray;
 }
 
 /**
  * Extracts question and answers from data returned from database
- * @param {array} List of all question data
+ * @param {array} List of all question data from database
  */
 function extractData(questionList) {
+    const questionsArray = [];
     questionList.map((item) => {
         let question = item.question;
         let answers = item.incorrect_answers;
         let correctAnswer = item.correct_answer;
         answers.push(correctAnswer);
         shuffle(answers);
-        questions.push({
+        questionsArray.push({
             question: question,
             answers: answers,
             correctAnswer: correctAnswer
         });
     });
+    return questionsArray;
 }
 
 /** 
- * Resets progress values and calls functions to start a new game.
+ * Resets progress values and calls functions to load in question data and check answers.
  * @param {string} chosen difficulty
  * @param {string} session token
  */
 async function startGame(difficulty, token) {
-    await getQuestions(difficulty, token);
+    const questionsArray = await getQuestions(difficulty, token);
     questionIndex = 0;
     strikes = "";
     strikeCounter = 0;
     hideScreen();
-    loadQuestion();
-    checkAnswer();
+    loadQuestion(questionsArray);
+    checkAnswer(questionsArray);
 }
 
 /** 
  * Increments questionIndex and assigns question and answer values to respective
- * elements based off questionIndex.
+ * elements based off questionIndex. Stores correct answer in answerCheck variable.
+ * @param {Array} Array of questions and answers
  */
-function loadQuestion() {
+function loadQuestion(questions) {
+    const questionsArray = questions;
     if (strikeCounter >= 3) {
         Swal.fire({
             title: 'Game Over!',
@@ -111,7 +115,7 @@ function loadQuestion() {
         reset();
     } else {
         questionNumberRef.innerHTML = `Question ${questionIndex + 1}`;
-        let currentQuestion = questions[questionIndex];
+        let currentQuestion = questionsArray[questionIndex];
         questionTextRef.innerHTML = `${currentQuestion.question}`;
         for (i = 0; i < answersChoicesRef.length; i++) {
             answersChoicesRef[i].innerHTML = currentQuestion.answers[i];
@@ -126,31 +130,34 @@ function loadQuestion() {
 /** 
  * Adds event listeners to answer buttons and checks selected answer against
  * answerCheck set by loadQuestion()
+ * @param {Array} array of questions and answers
  */
-function checkAnswer() {
+function checkAnswer(questions) {
+    const questionsArray = questions;
     for (let button of answersChoicesRef) {
         button.addEventListener("click", function (e) {
-            const chosenAns = e.target.innerHTML;
+            const buttonPressed = e.target;
+            const chosenAns = buttonPressed.innerHTML;
             if (ready == true) {
                 if (chosenAns == answerCheck) {
                     ready = false;
                     strikesRef.innerHTML = strikes;
-                    e.target.classList.add("correct");
-                    gameWon();
+                    buttonPressed.classList.add("correct");
+                    gameWon(questionsArray);
                     setTimeout(() => (
-                        e.target.classList.remove("correct"),
-                        loadQuestion()
+                        buttonPressed.classList.remove("correct"),
+                        loadQuestion(questionsArray)
                     ), 1000);
                 } else {
                     ready = false;
                     strikes += '<i class="fas fa-skull"></i>';
                     strikeCounter++;
                     strikesRef.innerHTML = strikes;
-                    e.target.classList.add("incorrect");
-                    gameWon();
+                    buttonPressed.classList.add("incorrect");
+                    gameWon(questionsArray);
                     setTimeout(() => (
-                        e.target.classList.remove("incorrect"),
-                        loadQuestion()
+                        buttonPressed.classList.remove("incorrect"),
+                        loadQuestion(questionsArray)
                     ), 1000);
                 }
             }
@@ -169,8 +176,9 @@ function hideScreen() {
 /**
  * Checks with each round if player has gotten to the end
  * of the questions list
+ * @param {Array} array of questions and answers
  */
-function gameWon() {
+function gameWon(questions) {
     if (questionIndex > questions.length) {
         Swal.fire({
             title: 'Winner!',
