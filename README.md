@@ -54,8 +54,18 @@ Colors were chosen based on Aztec and Mayan artwork and to common colors associa
     - The Player has the option of choosing from 3 difficulty settings which pull from a different pool with the Open Trivia Database. 
     - Upon reloading or restarting, the player can chose their desired difficulty once again.
 
+![Difficulty Buttons](docs/screenshots/difficulty-buttons.png)
+
 - Session Tokens
     - This game uses OpenTDB's session tokens to cut down on the possibility of the player receiving repeat questions within a single session.
+
+```
+async function getToken() {
+    let response = await fetch("https://opentdb.com/api_token.php?command=request");
+    let token = await response.json();
+    return token.token;
+}
+```
 
 - No Page Loads 
     - All game elements and screens are contained within a single webpage. This means that the player is never required to load any additional pages or data after the initial load.
@@ -64,16 +74,24 @@ Colors were chosen based on Aztec and Mayan artwork and to common colors associa
     - Game fetches 50 questions from the database, all are 4 option, multiple choice questions.
     - Quiz pulls from all possible topics for a wide variety in question content.
 
+![Quiz question](docs/screenshots/questions.png)
+
 - Interaction Feedback
     - The game provides feedback to the player for every action they take.
     - Players are given an opportunity to see whether their answer was right or wrong before moving on the the next.
     - All buttons have hover effects to show that they are interactable items.
 
+![Feedback Example](docs/screenshots/feedback.jpg)
+
 - Progress Bar
     - The game screen contains a progress bar which shows the player their progress through the gauntlet. This serves both as an incentive for the player to try to get as close to the end as they can while also showing just how long and difficult the gauntlet is.
 
+![Progress Bar](docs/screenshots/progress-bar.png)
+
 - Three Strike Life System
     - The quiz has a failstate where every time they get and answer wrong they receive a strike and when the strike limit is reached the game is over and the player must restart from the beginning.
+
+![Strikes Icons](docs/screenshots/strikes.png)
 
 - Database API Question Pool
     - The game pulls from the [Open Trivia Database's](https://opentdb.com/) pool of user submitted and verified questions and answers. The game then parses the data and serves the questions and answers to the user.
