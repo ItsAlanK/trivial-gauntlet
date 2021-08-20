@@ -137,9 +137,9 @@ function checkAnswer(questions) {
     for (let button of answersChoicesRef) {
         button.addEventListener("click", function (e) {
             const buttonPressed = e.target;
-            const chosenAns = buttonPressed.innerHTML;
+            const chosenAnswer = buttonPressed.innerHTML;
             if (ready == true) {
-                if (chosenAns == answerCheck) {
+                if (chosenAnswer == answerCheck) {
                     ready = false;
                     strikesRef.innerHTML = strikes;
                     buttonPressed.classList.add("correct");
