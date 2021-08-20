@@ -3,7 +3,7 @@ Tackle a gauntlet of trivia questions and see how far you can get with limited s
 
 The game is set to an ancient Central American empire gauntlet style background inspired by more physical gauntlet challenges from TV such as Legends of the Hidden Temple and The Crystal Maze. There is also humour in treating the gauntlet as something serious and arduous while having the word trivial in the title.
 
-** Responsive Image **
+![Responsive Image](docs/images/responsive-image.png)
 
 ## Design Choices ##
 ### Concept ###
@@ -44,6 +44,9 @@ Typography icons used for progress bar and strike indicators are found on [Font 
 - [Progress Marker Icon](https://fontawesome.com/v5.15/icons/male?style=solid)
 - [Finish Line Icon](https://fontawesome.com/v5.15/icons/flag-checkered?style=solid)
 ### Colors ###
+Colors were chosen based on Aztec and Mayan artwork and to common colors associated with them. This meant a combination of yellow, orange and teal. Their shades were chosen to ensure that contrast was high enough to not cause any readability issues. A green and red were then chosen to compliment them while still conveying the idea of answers being correct or incorrect.
+![Color Palette](docs/images/color-palette.png)
+    - Color Palette Created using [Coolors.co](https://coolors.co/)
 
 ## Features ##
 ### Existing Features ###
