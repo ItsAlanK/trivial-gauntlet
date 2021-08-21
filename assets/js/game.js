@@ -1,10 +1,10 @@
 // Refs
 const titleScreenRef = document.querySelector("#title-screen");
 const gameWindowRef = document.querySelector("#game-window");
-const diffBtnsRef = document.getElementsByClassName("difficulty-btn");
+const diffBtnsRef = document.querySelectorAll(".difficulty-btn");
 const questionNumberRef = document.querySelector("#question-number");
-const questionTextRef = document.getElementById("question");
-const answersChoicesRef = Array.from(document.getElementsByClassName("answers-text"));
+const questionTextRef = document.querySelector("#question");
+const answersChoicesRef = Array.from(document.querySelectorAll(".answers-text"));
 const strikesRef = document.querySelector("#strikes");
 const progressMarkerRef = document.querySelector("#progress-marker");
 const finishMarkerRef = document.querySelector("#finish-line");
